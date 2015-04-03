@@ -41,6 +41,7 @@
     <li><a href="http://localhost/4annales1/practice.html">practice test</a></li>
     <li><a href="http://localhost/4annales1/jsverif1.php">jsverif1</a></li>
     <li><a href="http://localhost/4annales1/jsverif3.php">jsverif3</a></li>
+    <li><a href="http://localhost/4annales1/exojs.html">exo js</a></li>
     <li><a href="http://localhost/4annales1">, ex5</a></li>
 </ul>
 
