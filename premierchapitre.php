@@ -20,17 +20,9 @@
 </head>
 <body>
 
-<h3>4annales1, index of 4annales1</h3>
+<?php include("menu.php"); ?>
 
-<ul style="list-style-type:none;">
-	<li><a href="http://localhost/4annales1/index.html">index</a></li>
-	<li><a href="http://localhost/4annales1/premierchapitre.html">Premier Chapitre, ex1</a></li>
-    <li><a href="http://localhost/4annales1/journalnfa016ex3.html">Le journal de nfa016, ex3</a></li>
-    <li><a href="http://localhost/4annales1">, ex4</a></li>
-    <li><a href="http://localhost/4annales1/practice.html">practice test</a></li>
-    <li><a href="http://localhost/4annales1/exojs.html">exo js</a></li>
-    <li><a href="http://localhost/4annales1">, ex5</a></li>
-</ul>
+<h3>4annales1, index of 4annales1</h3>
 
 <h1>Premier Chapitre, ex1</h1>
 
