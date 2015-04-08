@@ -15,6 +15,16 @@ function verifEmpty() {
 	return ok;
 }
 
+function verifFnEmpty() {
+	var fn = document.forms["pract2"]["txt2"].value.trim();
+	if(fn == null || fn == "") {
+		document.getElementById("message").innerHTML = "The field firstname cannot be empty";
+		return false;
+	} else {
+		return true;
+	}
+}
+
 function verifTime() {
 	var ok = true;
 	if(/^([01][0-9]|20|[21]|[22]|[23]):([0-5][0-9])$/.test(document.getElementById("time").value) == false) {
@@ -47,17 +57,17 @@ function nbParfum() {
 }
 
 function totalPrice(nbParfum) {
-	var price = 5;
-	var size = document.getElementsByName("size");
+
+	if(document.getElementById('big').checked) {
+		var price = 8;
+	} else if(document.getElementById('normal').checked) {
+		var price = 5;
+	}
 
 	price += (nbParfum*2);
 
 	if(document.getElementById("chantilly").checked) {
 		price += 0.50;
-	}
-
-	if(size[0].checked) {
-		price += 3;
 	}
 
 	document.getElementById("price").innerHTML = price;
@@ -77,8 +87,9 @@ function totalPrice(nbParfum) {
 	<p><span id="message">Welcome to the form</span></p>
 	<p>nb of parfum icecream selected : <span id="nb"></span></p>
 	<p>Total price : <span id="price"></span></p>
+	<p>Test : <span id="test"></span></p>
 
-	<form action="jsverif2.php" type="get" onsubmit="return verifEmpty()">
+	<form name="pract2" action="jsverif2.php" type="get" onsubmit="return !!(verifEmpty() && verifFnEmpty())">
 		
 		<p>Enter your name <input type="text" id="name" name="txt1" placeholder="cannot be empty"></input></p>
 		<p>Enter your firstname <input type="text" id="fn" name="txt2" placeholder="can be empty for now.."></input></p>
@@ -89,6 +100,11 @@ function totalPrice(nbParfum) {
 		<p><input type="submit" value="submit !" onclick="return !!(verifTime() & verifBorn())"></p>
 
 		<p>What kind of icecream would you like ?<br />
+		<p>
+		Size : <br />
+		<input type="radio" name="size" id="normal" checked onclick="totalPrice(nbParfum())" >Normal</input>
+		<input type="radio" name="size" id="big" onclick="totalPrice(nbParfum())" >Big</input>
+		</p>
 		<select name="ice[]" id="ice" multiple="multiple" onchange="totalPrice(nbParfum())">
 			<option>vanille</option>
 			<option>chocolat</option>
@@ -97,11 +113,6 @@ function totalPrice(nbParfum) {
 		</select>
 		<p>Chantilly ? 
 		<input type="checkbox" id="chantilly" onclick="totalPrice(nbParfum())" /></p>
-		</p>
-		<p>
-		Size : <br />
-		<input type="radio" name="size" id="normal" checked onchange="totalPrice(nbParfum()" >Normal</input>
-		<input type="radio" name="size" id="big" onchange="totalPrice(nbParfum()" >Big</input>
 		</p>
 
 	</form>
