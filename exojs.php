@@ -36,6 +36,45 @@
 		}
 	}
 
+	function addCat(li1, tabChat) {
+		
+		for(i in tabChat) {
+			var lis = document.createElement('li');
+			var txt = document.createTextNode(tabChat[i]);
+
+			document.getElementById(li1).appendChild(lis);
+			lis.appendChild(txt);
+		}
+	}
+
+	function seeColorz() {
+		var col = document.getElementById('colorz');
+		var toDisplay = "d: ";
+		for ( var i=0 ; i<col.options.length ; i++ ) {
+			toDisplay = toDisplay + " " + col.options[i].value;
+		}
+
+		document.getElementById('spanColorz').innerHTML = toDisplay;
+	}
+
+	function cacher() {
+		document.getElementById('aCacher');
+	}
+
+    var displayADonner = "none";
+	function cacherAutres2() {
+    	var elements= document.querySelectorAll("#aCacher li");
+    	var vuPremier= false;
+      		for (var i= 1; i < elements.length; i++) {
+        		elements[i].style.display= displayADonner;
+    		}
+    	if (displayADonner === "none") {
+        displayADonner= "list-item";
+    	} else {
+        	displayADonner= "none";
+    	}
+ 	}
+
 </script>
 
 </head>
@@ -54,6 +93,32 @@ Score player2 :<input type="text" id="scoreP2" onkeyup="compareScore()"></input>
 <span id="compareScoreSpan">Compare score</span>
 </p>
 
+<p>
+	<ul id="maListe">
+		<li>chien</li>
+	</ul>
+	<input type="submit" onclick="addCat('maListe', ['chat de goutiere', 'chat siamois'])"/>
+</p>
+
+<p>
+	<select id="colorz" multiple="multiple">
+		<option>red</option>
+		<option>blue</option>
+		<option>black</option>
+	</select>
+
+	<span id="spanColorz"></span><input type="submit" onclick="seeColorz()" />
+</p>
+
+<p>
+
+	<ul id="aCacher">
+		<li onclick="cacherAutres2()">un</li>
+		<li>deux</li>
+		<li>trois</li>
+	</ul>
+	<input type="submit" />
+</p>
 
 </body>
 </html>

@@ -6,9 +6,9 @@
 
 <script>
 
-function verifEmpty() {
+function verifEmpty(name1) {
 	var ok = true;
-	if(document.getElementById("name").value.trim() == "") {
+	if(document.getElementById(name1).value.trim() == "") {
 		ok = false;
 		document.getElementById("message").innerHTML = "The field name cannot be empty";
 	}
@@ -89,7 +89,7 @@ function totalPrice(nbParfum) {
 	<p>Total price : <span id="price"></span></p>
 	<p>Test : <span id="test"></span></p>
 
-	<form name="pract2" action="jsverif2.php" type="get" onsubmit="return !!(verifEmpty() && verifFnEmpty())">
+	<form name="pract2" action="jsverif2.php" type="get" onsubmit="return !!(verifEmpty('name') && verifFnEmpty())">
 		
 		<p>Enter your name <input type="text" id="name" name="txt1" placeholder="cannot be empty"></input></p>
 		<p>Enter your firstname <input type="text" id="fn" name="txt2" placeholder="can be empty for now.."></input></p>
