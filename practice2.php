@@ -3,6 +3,20 @@
 <head>
   <title>Exo</title>
   <meta charset="utf-8"/>
+<style>
+	#left {
+		width: 75%;
+		position: fixed;
+	}
+	#right {
+		width: 25%;
+		position: absolute;
+		right: 0;
+		background: grey;
+		margin: 20px;
+		padding: 4px;
+	}
+</style>
 
 <script>
 
@@ -27,7 +41,7 @@ function verifFnEmpty() {
 
 function verifTime() {
 	var ok = true;
-	if(/^([01][0-9]|20|[21]|[22]|[23]):([0-5][0-9])$/.test(document.getElementById("time").value) == false) {
+	if(/^([01][0-9]|20|21|22|\b23\b):([0-5][0-9])$/.test(document.getElementById("time").value) == false) {
 		ok = false;
 		document.getElementById("message").innerHTML = "Time format not correct";
 	}
@@ -79,7 +93,7 @@ function totalPrice(nbParfum) {
 </head>
 <body>
 
-<?php include("menu.php"); ?>
+<div id="right"><?php include("menu.php"); ?></div>
 
 <h3>4annales, practice2</h3>
 

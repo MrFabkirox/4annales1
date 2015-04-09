@@ -7,6 +7,7 @@
     <li><a href="http://localhost/4annales1/formulairerdzvous.php">Formulaire rdz vous, ex4</a></li>
     <li><a href="http://localhost/4annales1/practice.php">practice test</a></li>
     <li><a href="http://localhost/4annales1/practice2.php">practice2</a></li>
+    <li><a href="http://localhost/4annales1/practice3.php">practice3</a></li>
     <li><a href="http://localhost/4annales1/jsverif1.php">jsverif1</a></li>
     <li><a href="http://localhost/4annales1/jsverif2.php">jsverif2, returns of forms</a></li>
     <li><a href="http://localhost/4annales1/jsverif3.php">jsverif3</a></li>

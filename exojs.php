@@ -3,6 +3,20 @@
 <head>
   <title>Exo</title>
   <meta charset="utf-8"/>
+<style>
+	#left {
+		width: 75%;
+		position: fixed;
+	}
+	#right {
+		width: 25%;
+		position: absolute;
+		right: 0;
+		background: grey;
+		margin: 20px;
+		padding: 4px;
+	}
+</style>
 
 <script>
 	
@@ -57,11 +71,8 @@
 		document.getElementById('spanColorz').innerHTML = toDisplay;
 	}
 
-	function cacher() {
-		document.getElementById('aCacher');
-	}
-
     var displayADonner = "none";
+
 	function cacherAutres2() {
     	var elements= document.querySelectorAll("#aCacher li");
     	var vuPremier= false;
@@ -80,7 +91,7 @@
 </head>
 <body>
 
-<?php include("menu.php"); ?>
+<div id="right"><?php include("menu.php"); ?></div>
 
 <h3>4annales, exo js</h3>
 
